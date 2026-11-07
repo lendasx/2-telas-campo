@@ -1,0 +1,141 @@
+
+/* CABEÇALHO DO CARDÁPIO */
+
+.cabecalho-cardapio {
+    text-align: center;
+    padding: 55px 20px;
+    background: linear-gradient(135deg, #ee3902, #ff9800);
+    color: white;
+}
+
+.cabecalho-cardapio h2 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 32px;
+    color: #C9360B;
+}
+
+.cabecalho-cardapio p {
+    margin: 15px;
+}
+
+.cabecalho-cardapio span {
+    font-weight: bold;
+}
+
+/* ÁREA DOS LANCHES */
+
+.menu-lanches {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.menu-lanches > h2 {
+    font-family: 'Bungee', sans-serif;
+    color: #ff5722;
+    font-size: 28px;
+}
+
+.menu-lanches > p {
+    color: #ccc;
+    margin: 15px 0 35px;
+}
+
+/* ORGANIZAÇÃO DOS CARDS */
+
+.lista-lanches {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.lanche {
+    background-color: #202020;
+    border: 2px solid #ff5722;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.lanche:hover {
+    transform: translateY(-5px);
+    border-color: #ff9800;
+}
+
+.lanche img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.lanche-info {
+    padding: 20px;
+}
+
+.lanche-info h3 {
+    color: white;
+    font-family: 'Bungee', sans-serif;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.lanche-info p {
+    color: #ccc;
+    min-height: 55px;
+    margin-bottom: 15px;
+}
+
+.lanche-info strong {
+    display: block;
+    color: #ff9800;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+/* BOTÃO VOLTAR */
+
+.voltar {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 22px;
+    background-color: #444;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.voltar:hover {
+    background-color: #555;
+}
+
+/* ACESSIBILIDADE */
+
+.lanche a:focus-visible,
+.voltar:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .lista-lanches {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .lista-lanches {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-cardapio h2 {
+        font-size: 23px;
+    }
+
+    .lanche img {
+        height: 200px;
+    }
+}

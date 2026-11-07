@@ -4,77 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FoodExpress - Início</title>
+
+    <title>FoodExpress - Cardápio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="cardapio.css">
 </head>
+
 <body>
 
     <header>
         <h1>🍔 FoodExpress</h1>
 
         <nav aria-label="Menu principal">
-            <a href="index.html">Início</a>
-            <a href="cardapio.html">Cardápio</a>
+            <a href="restaurante.html">Restaurantes</a>
+            <a href="cardapio.html" aria-current="page">Cardápio</a>
             <a href="carrinho.html">Carrinho</a>
         </nav>
     </header>
 
     <main>
-        <section class="banner">
-            <h2>Bateu aquela fome?</h2>
-            <p>Peça sua comida favorita sem sair de casa!</p>
-            <a href="cardapio.html" class="botao">
-                Ver Cardápio
-            </a>
+
+        <section class="cabecalho-cardapio">
+            <h2>Hamburgueria Top</h2>
+            <p>Os melhores lanches para matar sua fome!</p>
+            <span>⭐ 4.9 | Hambúrgueres artesanais</span>
         </section>
 
-        <section class="conteudo">
-            <h2>Restaurantes em destaque</h2>
-            <p>Escolha o que você quer comer hoje!</p>
+        <section class="menu-lanches">
 
-            <div class="cards">
+            <h2>Nosso Cardápio</h2>
+            <p>Escolha seu lanche favorito!</p>
 
-                <article class="card">
+            <div class="lista-lanches">
+
+                <article class="lanche">
                     <img
                         src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700"
-                        alt="Hambúrguer com queijo e salada">
+                        alt="Hambúrguer artesanal com queijo e salada">
 
-                    <h3>Hamburgueria Top</h3>
-                    <p>Hambúrgueres deliciosos</p>
-                    <span>⭐ 4.9</span>
-                    <a href="cardapio.html" class="botao">
-                        Ver Cardápio
-                    </a>
+                    <div class="lanche-info">
+                        <h3>Hambúrguer Clássico</h3>
+                        <p>Pão, carne artesanal, queijo, alface e tomate.</p>
+                        <strong>R$ 29,90</strong>
+
+                        <a href="carrinho.html" class="botao">
+                            Pedir agora
+                        </a>
+                    </div>
                 </article>
 
-                <article class="card">
+                <article class="lanche">
                     <img
-                        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=700"
-                        alt="Pizza com queijo e tomate">
+                        src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=700"
+                        alt="Hambúrguer duplo com queijo e bacon">
 
-                    <h3>Pizzaria Bella</h3>
-                    <p>As melhores pizzas da cidade</p>
-                    <span>⭐ 4.8</span>
-                    <a href="cardapio.html" class="botao">
-                        Ver Cardápio
-                    </a>
+                    <div class="lanche-info">
+                        <h3>Duplo Bacon</h3>
+                        <p>Dois hambúrgueres, queijo cheddar e bacon crocante.</p>
+                        <strong>R$ 39,90</strong>
+
+                        <a href="carrinho.html" class="botao">
+                            Pedir agora
+                        </a>
+                    </div>
                 </article>
 
-                <article class="card">
+                <article class="lanche">
                     <img
-                        src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=700"
-                        alt="Combinado de sushi">
+                        src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=700"
+                        alt="Hambúrguer especial com batatas fritas">
 
-                    <h3>Sushi House</h3>
-                    <p>Comida japonesa de qualidade</p>
-                    <span>⭐ 4.7</span>
-                    <a href="cardapio.html" class="botao">
-                        Ver Cardápio
-                    </a>
+                    <div class="lanche-info">
+                        <h3>Combo Especial</h3>
+                        <p>Hambúrguer artesanal, batata frita e refrigerante.</p>
+                        <strong>R$ 44,90</strong>
+
+                        <a href="carrinho.html" class="botao">
+                            Pedir agora
+                        </a>
+                    </div>
                 </article>
 
             </div>
+
+            <a href="restaurante.html" class="voltar">
+                ← Voltar aos restaurantes
+            </a>
+
         </section>
+
     </main>
 
     <footer>
