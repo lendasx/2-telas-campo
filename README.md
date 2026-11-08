@@ -1,6 +1,25 @@
-LETICIA ANTONYELLE HARDT DA LUZ
+# FoodExpress 🍔
 
-Neste projeto do FoodExpress, eu fiquei responsável por toda a parte de carrinho, pagamento e finalização do pedido.
+## Sobre o projeto
+O FoodExpress é um site de delivery desenvolvido como trabalho acadêmico do curso de Engenharia de Software. O objetivo é facilitar a visualização do cardápio e a realização de pedidos.
 
-Eu criei a página do carrinho (carrinho.html) e fiz o script em JavaScript para atualizar os valores de subtotal, taxa de entrega e total em tempo real, além de permitir aumentar, diminuir a quantidade ou remover os lanches da lista.
- Também criei a tela de pagamento (pagamento.html) com o formulário de endereço e escolha da forma de pagamento — onde o campo de troco aparece automaticamente se a pessoa escolher pagar em dinheiro — e desenvolvi a página de confirmação (confirmacao.html) com o status do pedido em tempo real.
+## Funcionalidades
+- Página inicial.
+- Cardápio de produtos.
+- Carrinho de compras.
+- Acompanhamento de pedidos.
+- Finalização de pedidos.
+
+## Tecnologias utilizadas
+- HTML
+- CSS
+- JavaScriptgit add .
+
+## Integrantes
+- Lucas Geraldo
+- Leticia Antonyelle
+
+## Objetivo
+Desenvolver um site simples, organizado e fácil de usar, funcionando tanto em computadores quanto em celulares.
+
+**FoodExpress – 2026**
