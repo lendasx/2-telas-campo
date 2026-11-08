@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Finalizar Pedido</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+
+    <header>
+        <h1>🍔 FoodExpress</h1>
+        <nav aria-label="Menu principal">
+            <a href="restaurante.html">Restaurantes</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="cabecalho-cardapio">
+            <h2>Finalizar Pedido</h2>
+            <p>Preencha os dados de entrega e escolha como deseja pagar!</p>
+            <span>🔒 Checkout Seguro | Entrega em 30 - 45 min</span>
+        </section>
+
+        <section class="pagamento-container">
+
+            <!-- FORMULÁRIO DIRECIONANDO PARA CONFIRMACAO.HTML -->
+            <form id="form-finalizar" action="confirmacao.html" method="GET" class="form-pagamento">
+
+                <!-- ETAPA 1: ENDEREÇO DE ENTREGA -->
+                <div class="bloco-pagamento">
+                    <h3>1. Endereço de Entrega</h3>
+                    
+                    <div class="grupo-input">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <div class="linha-dupla">
+                        <div class="grupo-input flex-2">
+                            <label for="rua">Rua / Avenida</label>
+                            <input type="text" id="rua" name="rua" placeholder="Ex: Av. Brasil" required>
+                        </div>
+                        <div class="grupo-input flex-1">
+                            <label for="numero">Número</label>
+                            <input type="text" id="numero" name="numero" placeholder="123" required>
+                        </div>
+                    </div>
+
+                    <div class="linha-dupla">
+                        <div class="grupo-input">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="bairro" name="bairro" placeholder="Seu bairro" required>
+                        </div>
+                        <div class="grupo-input">
+                            <label for="telefone">WhatsApp / Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 90000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="grupo-input">
+                        <label for="complemento">Complemento (opcional)</label>
+                        <input type="text" id="complemento" name="complemento" placeholder="Apto, Bloco, Ponto de referência">
+                    </div>
+                </div>
+
+                <!-- ETAPA 2: FORMA DE PAGAMENTO -->
+                <div class="bloco-pagamento">
+                    <h3>2. Forma de Pagamento</h3>
+
+                    <div class="opcoes-pagamento">
+                        <label class="opcao-card">
+                            <input type="radio" name="metodo_pagamento" value="pix" checked>
+                            <span class="opcao-conteudo">
+                                <strong>⚡ PIX</strong>
+                                <small>Aprovação instantânea</small>
+                            </span>
+                        </label>
+
+                        <label class="opcao-card">
+                            <input type="radio" name="metodo_pagamento" value="cartao">
+                            <span class="opcao-conteudo">
+                                <strong>💳 Cartão na Entrega</strong>
+                                <small>Crédito ou Débito</small>
+                            </span>
+                        </label>
+
+                        <label class="opcao-card">
+                            <input type="radio" name="metodo_pagamento" value="dinheiro">
+                            <span class="opcao-conteudo">
+                                <strong>💵 Dinheiro</strong>
+                                <small>Pague ao entregador</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- CAMPO DINÂMICO PARA TROCO -->
+                    <div id="campo-troco" class="grupo-input" style="display: none; margin-top: 15px;">
+                        <label for="troco">Precisa de troco para quanto?</label>
+                        <input type="text" id="troco" name="troco" placeholder="Ex: R$ 100,00">
+                    </div>
+                </div>
+
+                <!-- ETAPA 3: RESUMO E CONFIRMAÇÃO -->
+                <div class="bloco-resumo-final">
+                    <div class="detalhe-total">
+                        <span>Total a Pagar:</span>
+                        <strong id="total-pagamento">R$ 77,80</strong>
+                    </div>
+
+                    <button type="submit" class="botao btn-confirmar">
+                        Confirmar e Fazer Pedido
+                    </button>
+
+                    <a href="carrinho.html" class="voltar-link">← Voltar ao carrinho</a>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FoodExpress - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- INTERAÇÃO DA SELEÇÃO DE DINHEIRO/TROCO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radiosPagamento = document.querySelectorAll('input[name="metodo_pagamento"]');
+            const campoTroco = document.getElementById('campo-troco');
+
+            radiosPagamento.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    if (e.target.value === 'dinheiro') {
+                        campoTroco.style.display = 'flex';
+                    } else {
+                        campoTroco.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

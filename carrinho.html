@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Carrinho</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+
+    <header>
+        <h1>🍔 FoodExpress</h1>
+        <nav aria-label="Menu principal">
+            <a href="restaurante.html">Restaurantes</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="carrinho.html" aria-current="page">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="cabecalho-cardapio">
+            <h2>Seu Carrinho</h2>
+            <p>Confira os itens selecionados antes de ir para o pagamento!</p>
+            <span>🛵 Entrega estimada: 30 a 45 min</span>
+        </section>
+
+        <section class="carrinho-secao">
+
+            <div class="carrinho-grid">
+
+                <!-- LISTA DE ITENS DO CARRINHO -->
+                <div class="lista-itens-carrinho" id="lista-carrinho">
+
+                    <article class="item-carrinho">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300" alt="Hambúrguer Clássico">
+                        <div class="item-info">
+                            <h3>Hambúrguer Clássico</h3>
+                            <p class="restaurante-origem">Hamburgueria Top</p>
+                            <span class="preco-unitario">R$ 29,90</span>
+                        </div>
+                        <div class="item-acoes">
+                            <div class="controle-qtd">
+                                <button type="button" class="btn-menos" aria-label="Diminuir">-</button>
+                                <span class="qtd-numero">1</span>
+                                <button type="button" class="btn-mais" aria-label="Aumentar">+</button>
+                            </div>
+                            <button type="button" class="btn-remover">Remover</button>
+                        </div>
+                    </article>
+
+                    <article class="item-carrinho">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=300" alt="Pizza Margherita">
+                        <div class="item-info">
+                            <h3>Margherita Bella</h3>
+                            <p class="restaurante-origem">Pizzaria Bella</p>
+                            <span class="preco-unitario">R$ 42,90</span>
+                        </div>
+                        <div class="item-acoes">
+                            <div class="controle-qtd">
+                                <button type="button" class="btn-menos" aria-label="Diminuir">-</button>
+                                <span class="qtd-numero">1</span>
+                                <button type="button" class="btn-mais" aria-label="Aumentar">+</button>
+                            </div>
+                            <button type="button" class="btn-remover">Remover</button>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- CARD DE RESUMO DE VALORES -->
+                <aside class="resumo-carrinho">
+                    <h3>Resumo do Pedido</h3>
+                    
+                    <div class="linha-resumo">
+                        <span>Subtotal</span>
+                        <span id="valor-subtotal">R$ 72,80</span>
+                    </div>
+
+                    <div class="linha-resumo">
+                        <span>Taxa de Entrega</span>
+                        <span id="valor-taxa">R$ 5,00</span>
+                    </div>
+
+                    <hr class="divisor">
+
+                    <div class="linha-resumo total">
+                        <span>Total</span>
+                        <strong id="valor-total">R$ 77,80</strong>
+                    </div>
+
+                    <a href="pagamento.html" class="botao btn-avancar">
+                        Ir para o Pagamento →
+                    </a>
+
+                    <a href="restaurante.html" class="voltar-link">
+                        ← Adicionar mais itens
+                    </a>
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FoodExpress - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- SCRIPT DE INTERATIVIDADE DO CARRINHO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const subtotalEl = document.getElementById('valor-subtotal');
+            const taxaEl = document.getElementById('valor-taxa');
+            const totalEl = document.getElementById('valor-total');
+            const listaCarrinho = document.getElementById('lista-carrinho');
+
+            function atualizarValores() {
+                let subtotal = 0;
+                const itens = document.querySelectorAll('.item-carrinho');
+
+                itens.forEach(item => {
+                    const precoTexto = item.querySelector('.preco-unitario').innerText;
+                    const preco = parseFloat(precoTexto.replace('R$ ', '').replace(',', '.'));
+                    const qtd = parseInt(item.querySelector('.qtd-numero').innerText);
+                    subtotal += preco * qtd;
+                });
+
+                const taxaEntrega = subtotal > 0 ? 5.00 : 0.00;
+                const total = subtotal + taxaEntrega;
+
+                subtotalEl.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                taxaEl.innerText = `R$ ${taxaEntrega.toFixed(2).replace('.', ',')}`;
+                totalEl.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+                if (itens.length === 0) {
+                    listaCarrinho.innerHTML = '<p style="color: #aaa; text-align: center; padding: 40px; font-size: 18px;">Seu carrinho está vazio!</p>';
+                }
+            }
+
+            document.addEventListener('click', (e) => {
+                // Aumentar (+)
+                if (e.target.classList.contains('btn-mais')) {
+                    const qtdSpan = e.target.previousElementSibling;
+                    let qtd = parseInt(qtdSpan.innerText);
+                    qtdSpan.innerText = qtd + 1;
+                    atualizarValores();
+                }
+
+                // Diminuir (-)
+                if (e.target.classList.contains('btn-menos')) {
+                    const qtdSpan = e.target.nextElementSibling;
+                    let qtd = parseInt(qtdSpan.innerText);
+                    if (qtd > 1) {
+                        qtdSpan.innerText = qtd - 1;
+                        atualizarValores();
+                    }
+                }
+
+                // Remover item
+                if (e.target.classList.contains('btn-remover')) {
+                    const itemCard = e.target.closest('.item-carrinho');
+                    itemCard.remove();
+                    atualizarValores();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

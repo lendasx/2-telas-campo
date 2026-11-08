@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Pedido Confirmado</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="pagamento.css">
+</head>
+<body>
+
+    <header>
+        <h1>🍔 FoodExpress</h1>
+        <nav aria-label="Menu principal">
+            <a href="restaurante.html">Restaurantes</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="carrinho.html">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="cabecalho-cardapio" style="background: linear-gradient(135deg, #4caf50, #2e7d32);">
+            <h2>🎉 Pedido Confirmado!</h2>
+            <p>Seu pedido #4892 foi recebido e já está em preparação.</p>
+            <span>⏱️ Tempo estimado: 35 a 45 minutos</span>
+        </section>
+
+        <section class="pagamento-container">
+
+            <!-- STATUS DO PEDIDO (PROGRESSO) -->
+            <div class="bloco-pagamento" style="text-align: center;">
+                <h3>Acompanhe seu Pedido</h3>
+
+                <div style="display: flex; justify-content: space-around; align-items: center; margin: 30px 0; gap: 10px; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 100px;">
+                        <div style="font-size: 30px;">✅</div>
+                        <strong style="color: #ff9800; display: block; margin-top: 5px;">Confirmado</strong>
+                    </div>
+                    <div style="flex: 1; min-width: 100px;">
+                        <div style="font-size: 30px;">🍳</div>
+                        <strong style="color: #ff9800; display: block; margin-top: 5px;">Na Cozinha</strong>
+                    </div>
+                    <div style="flex: 1; min-width: 100px; opacity: 0.4;">
+                        <div style="font-size: 30px;">🛵</div>
+                        <strong style="color: #aaa; display: block; margin-top: 5px;">Saiu p/ Entrega</strong>
+                    </div>
+                    <div style="flex: 1; min-width: 100px; opacity: 0.4;">
+                        <div style="font-size: 30px;">🏠</div>
+                        <strong style="color: #aaa; display: block; margin-top: 5px;">Entregue</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DETALHES DA ENTREGA E PAGAMENTO -->
+            <div class="bloco-pagamento" style="margin-top: 25px;">
+                <h3>Resumo da Entrega</h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px; color: #ccc;">
+                    <p><strong style="color: #fff;">Cliente:</strong> João da Silva</p>
+                    <p><strong style="color: #fff;">Endereço:</strong> Av. Brasil, 123 - Centro</p>
+                    <p><strong style="color: #fff;">Forma de Pagamento:</strong> PIX (Aprovado)</p>
+                    <p><strong style="color: #fff;">Total Pago:</strong> <span style="color: #ff9800; font-size: 18px; font-weight: bold;">R$ 77,80</span></p>
+                </div>
+            </div>
+
+            <!-- BOTÃO DE RETORNO -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="restaurante.html" class="botao" style="display: inline-block; padding: 14px 28px; text-decoration: none;">
+                    Voltar aos Restaurantes
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 FoodExpress - Todos os direitos reservados</p>
+    </footer>
+
+</body>
+</html>
